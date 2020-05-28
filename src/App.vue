@@ -10,7 +10,7 @@
         <button type="submit" class="btn btn-success px-5 mx-5">Añadir</button>
         <button type="reset" class="btn btn-warning px-5 mx-5">Limpiar</button>
       </form>
-      <Form :data=this.tareas></Form>
+      <Form @tareaEliminada="tareaAEliminar" :data=this.tareas></Form>
     </div>
   </div>
 </template>
@@ -26,7 +26,8 @@ export default {
   data() {
     return {
       tarea: "",
-      tareas: ["Pagar Internet", "Comprar Pan", "Pagar Netflix"]
+      tareas: ["Pagar Internet", "Comprar Pan", "Pagar Netflix"],
+      tareaId: null
     }
   },
   methods: {
@@ -44,6 +45,17 @@ export default {
     limpiar() {
       this.tarea = ""
     },
+    tareaAEliminar(id) {
+      this.tareaId = id
+      
+      try {
+        this.tareas.splice(id, 1)
+      } catch (error) {
+        console.log(error)
+      } finally {
+        this.tareaId = ""
+      }
+    }
   }
 };
 </script>
