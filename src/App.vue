@@ -31,7 +31,13 @@ export default {
   },
   methods: {
     agregar() {
-
+      try {
+        this.tareas.push(this.tarea)
+      } catch (error) {
+        console.log(error)
+      } finally {
+        this.tarea = ""
+      }
     },
     limpiar() {
       this.tarea = ""
