@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       tarea: "",
-      tareas: []
+      tareas: ["Pagar Internet", "Comprar Pan", "Pagar Netflix"]
     }
   },
   methods: {
