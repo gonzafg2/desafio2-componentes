@@ -5,7 +5,7 @@
     <section class="tareas d-flex flex-row justify-content-center mt-4">
       <ol>
         <li v-for="item in data" :key="item.id" class="py-2 items">
-          {{ item }} <button class="btn btn-danger btn-sm ml-3">Eliminar</button>
+          {{ item }} <button @click="eliminarTarea(item.id)" class="btn btn-danger btn-sm ml-3">Eliminar</button>
         </li>
         
       </ol>
@@ -27,8 +27,8 @@ export default {
     }
   },
   methods: {
-    eliminarTarea() {
-
+    eliminarTarea(id) {
+      this.$emit("tareaEliminada", id);
     }
   }
 };
