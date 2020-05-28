@@ -3,12 +3,12 @@
     
     <h3>Listado de Tareas</h3>
     <section class="tareas d-flex flex-row justify-content-center mt-4">
-      <ul>
-        <li v-for="item in data" :key="item.id" class="py-2">
+      <ol>
+        <li v-for="item in data" :key="item.id" class="py-2 items">
           {{ item }} <button class="btn btn-danger btn-sm ml-3">Eliminar</button>
         </li>
         
-      </ul>
+      </ol>
     </section>
   </div>
 </template>
@@ -34,4 +34,9 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.items{
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+</style>

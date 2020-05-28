@@ -32,7 +32,9 @@ export default {
   methods: {
     agregar() {
       try {
-        this.tareas.push(this.tarea)
+        if (this.tarea !== "") {
+          this.tareas.push(this.tarea)
+        }
       } catch (error) {
         console.log(error)
       } finally {
